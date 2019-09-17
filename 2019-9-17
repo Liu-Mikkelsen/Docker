@@ -1,0 +1,112 @@
+1 设置yum源
+   vi /etc/yum.repos.d/yum.repo
+
+[centos]
+name=centos
+baseurl=ftp://172.18.64.90/centos7/
+gpgcheck=0
+enabled=1
+[docker]
+name=docker
+baseurl=ftp://172.18.64.90/docker/docker/
+gpgcheck=0
+enabled=1
+
+2 配置dns
+
+ vi /etc/resolv.conf
+nameserver=
+
+3 yum update
+
+4 yum -y install docker-io 
+
+5 service docker start
+
+docker version
+
+----------------------------------------------------------------------------------------
+老版本docker  docker-io
+
+调试命令 docker info
+
+------------------------------------------------------------
+配置本地镜像
+vi /usr/lib/systemd/system/docker.service
+添加
+-insecure-registry 172.18.43.66:5000 \
+
+systemctl daemon-reload
+systemctl restart docker
+
+
+docker pull 172.18.43.66:5000/ubuntu:14.04.3
+
+docker pull nginx
+
+docker images
+
+docker search ubuntu
+
+docker rmi docker.io/nginx  删除
+
+  -----------------------------------------------	2019-9-16	
+yum   list installed | grep docker
+
+yum remove ****
+	请删除多余无用yum源					
+cd /etc/yum.repos.d/
+
+wget http://172.18.43.66/files/docker.repo
+
+yum install -y docker
+
+systemctl start docker.servic
+
+
+docker tag 548cb73bef9a nginx:latest（打标签）
+s
+docker load < nginx_latest.tar
+
+docker run --name webserver -d -p 80:80 nginx
+  出错提示[
+   root@docker1-1-20 yum.repos.d]# docker run --name webserver -d -p 80:80 nginx
+	/usr/bin/docker-current: Error response from daemon: error creating overlay mount to /var/lib/docker/overlay2/39109a511932d0a469ea625029041ad009ee7dc611c1ed0ff10c9e052e024884-init/merged: invalid argument.
+		See '/usr/bin/docker-current run --help'.
+
+docker ps
+
+
+----------------------------------------------------------2019-9-17
+
+公网拉取镜像
+dns: /etc/resolv.conf
+	添加
+		nameserver 114.114.114.114
+		nameserver 223.5.5.5
+
+docker pull nginx
+
+doxker run --name xxx -d -p   
+
+--------------------------------------------------
+
+建立本地镜像库
+
+vi /usr/lib/sysstemd/system/docker.service
+添加
+--add-registry=172.18.43.66:5000 --insecure-registry=172.18.43.66:5000 \
+
+重启docker
+systemctl daemon-reload
+systemctl restart docker
+
+docker info
+
+docker pull nginx 拉取镜像 231M
+
+docker ps
+私网的镜像开启容器方法
+docker run -p 3456:3306 -e MYSQL_ROOT_PASSWORD=1234 -d d9124e6c552f
+
+docker pull mysql
