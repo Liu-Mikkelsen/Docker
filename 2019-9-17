@@ -111,3 +111,6 @@ docker run -p 3456:3306 -e MYSQL_ROOT_PASSWORD=1234 -d d9124e6c552f
 
 docker pull mysql
 2019
+
+一天一天的，先把牌面做起来再说，我一天也不漏签，天天是绿色！！！！！
+
