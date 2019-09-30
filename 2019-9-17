@@ -115,6 +115,18 @@ docker pull mysql
 
 docker pull hub.c.163.com/library/busybox:1.27
        tag  hub.c.163.com/library/busybox:1.27 busybox:latest  打标签
+       *************************************************************
+       [root@docker-dzy-2 ~]#cd cmd
+       [root@docker-dzy-2 ~]#ll
+       [root@docker-dzy-2 ~]#cat Dockerfile
+       	
+	# docker build -t cmd:v2 .
+	# docker run cmd:v2  
+       
+       FROM busybox
+       CMD echo "hello cmd"
+       docker build -t cmd:v1 .
+       
        建目录
        cd/add
        mkdir add
@@ -125,11 +137,12 @@ docker pull hub.c.163.com/library/busybox:1.27
              FROM busybox
 	     ADD copy.txt /root/
 	     ADD add.txt /root/
-	     ADD http://js.sohu.com/libpv.js /root/
+	     ADD http://js.sohu.com/libpv.js /root/     
+	     
 	     
 #docker build -t add:v1 .          给新的容器打标签 
 
-启动容器 it:启动终端 -rm:容器停止后自动删除容器
+启动容器 -t:启动终端 -rm:容器停止后自动删除容器
 
 #docker run -it --rm add:v1
 容器内
