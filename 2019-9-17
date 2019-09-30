@@ -111,3 +111,30 @@ docker run -p 3456:3306 -e MYSQL_ROOT_PASSWORD=1234 -d d9124e6c552f
 
 docker pull mysql
 ----------------------------------------------2019-9-25
+
+
+docker pull hub.c.163.com/library/busybox:1.27;
+       tag                                      busybox:latest  打标签
+       建目录
+       cd/add
+       mkdir add
+       cd add
+       echo "hellow copy" > copy.txt
+       echo "hellow add" > add.txt
+       vi Dockerfile
+             FROM busybox
+	     ADD copy.txt /root/
+	     ADD add.txt /root/
+	     ADD http://js.sohu.com/libpv.js /root/
+	     
+#docker build -t add:v1 .          给新的容器打标签 
+
+启动容器 it:启动终端 -rm:容器停止后自动删除容器
+
+#docker run -it --rm add:v1
+容器内
+#cd /root
+
+#ls 可以看到三个文件复制过来
+
+-------------------------------------------------------2019-9-30
