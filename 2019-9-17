@@ -113,8 +113,8 @@ docker pull mysql
 ----------------------------------------------2019-9-25
 
 
-docker pull hub.c.163.com/library/busybox:1.27;
-       tag                                      busybox:latest  打标签
+docker pull hub.c.163.com/library/busybox:1.27
+       tag  hub.c.163.com/library/busybox:1.27 busybox:latest  打标签
        建目录
        cd/add
        mkdir add
