@@ -1,0 +1,21 @@
+mkdir entrypoint
+cd entrypoint
+ vi dockerfile
+	from busybox
+	enterpoint[ "/bin/ping","www.baidu.com"]
+cat dockerfile
+docker build -t entrypoint:v1 .
+docker run entrypoint:v1
+cat dockerfile
+
+
+
+
+
+dockerpoint
+ 	cmd
+ 	run
+	entrypoint
+
+
+docker run entrypoint:v1 -c 4
