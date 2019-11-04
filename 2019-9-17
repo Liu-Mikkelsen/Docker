@@ -1,6 +1,6 @@
-1 设置yum源
+
    vi /etc/yum.repos.d/yum.repo
-ppppppp
+0000000000ppppppp
 23333333333333333333
 [centos]
 name=centos
