@@ -1,4 +1,4 @@
-   vi /etc/yum.repos.d/yum.repo
+vi /etc/yum.repos.d/yum.repo
 [centos]
 name=centos
 baseurl=ftp://172.18.64.90/centos7/
