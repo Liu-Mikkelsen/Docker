@@ -6,9 +6,6 @@ gpgcheck=0
 enabled=1
 [docker]
 name=docker
-
-
-嗯
 baseurl=ftp://172.18.64.90/docker/docker/
 gpgcheck=0
 enabled=1
